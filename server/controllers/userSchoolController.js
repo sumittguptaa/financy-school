@@ -21,7 +21,7 @@ exports.userRegister =catchAsyncErrors( async(req,res,next)=>{
         }
     });
 
-    sendToken(user,201,res);
+    sendToken(user,201,res,"Successfully Registered");
 
 });
 
@@ -49,7 +49,7 @@ exports.userLogin = catchAsyncErrors(async (req,res,next)=>{
         return next(new ErrorHandler("Invalid Email or password",401));
     }
 
-    sendToken(user,200,res);
+    sendToken(user,200,res,"Logged in Successfully");
 
 });
 
