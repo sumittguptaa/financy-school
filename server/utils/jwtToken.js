@@ -2,7 +2,7 @@
 
 /// creating token and savig in cookie
 
-const sendToken =(user,statusCode,res)=>{
+const sendToken =(user,statusCode,res,message)=>{
 
     const token = user.getJWTToken();
 
@@ -17,6 +17,7 @@ const sendToken =(user,statusCode,res)=>{
     }
     res.status(statusCode).cookie('token',token,options).json({
         success:true,
+        message: message,
         user,
         token
     });
