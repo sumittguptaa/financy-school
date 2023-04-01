@@ -6,7 +6,7 @@ const errorMiddleware = require("./middleware/error");
 app.use(express.json());
 
 // route import
-const product = require("./routes/productRoute");
+const product = require("./routes/studentRoute");
 const user = require("./routes/userRoute");
 
 app.use("/api/v1",product)
