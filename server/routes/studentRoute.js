@@ -5,6 +5,7 @@ const router = express.Router();
 
 
 router.route("/students").get(getAllStudents);
+router.route("/students/:schoolId").get(getAllStudentsAssociatewithSchoolId);
 router.route("/student/new").post(createStudent);
 router.route("/student/:id").put(updateStudent).delete(deleteStudent).get(getStudentDetails);
 
