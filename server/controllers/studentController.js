@@ -17,8 +17,19 @@ exports.createStudent = catchAsyncErrors(async (req,res,next)=>{
 });
 
 
-//get All Product
+//get All Student
 
+exports.getAllStudentsAssociatewithSchoolId = catchAsyncErrors(async (req,res)=>{
+    
+    const schoolId = req.params.schoolId;
+    const students = await Student.find({school_id:schoolId});
+   
+
+    res.status(200).json({
+        message:true,
+        students
+    });
+})
 
 exports.getAllStudents = catchAsyncErrors(async (req,res)=>{
     const students = await Student.find();
