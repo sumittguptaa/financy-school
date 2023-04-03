@@ -1,7 +1,12 @@
 const mongoose = require("mongoose");
 
 const studentSchema = mongoose.Schema({
-    gi_student:[
+    school_id:{
+        type:String,
+        required:[true,"Please Enter School Id"],
+        trim:true
+    },
+    gi_student:
         {
             studentname_as_per_school_record:{
                 type:String,
@@ -47,9 +52,9 @@ const studentSchema = mongoose.Schema({
 
 
         }
-    ],
+    ,
 
-    student_enrollment_detail:[
+    student_enrollment_detail:
         {
             admission_no_in_school:{
                 type:String,
@@ -83,8 +88,8 @@ const studentSchema = mongoose.Schema({
             },
 
         }
-    ],
-    facility_detail_of_student:[
+    ,
+    facility_detail_of_student:
         {
             previous_year_scholarship_receive:{
                 type:String,
@@ -112,7 +117,7 @@ const studentSchema = mongoose.Schema({
                 trim:true
             }
         }
-    ],
+    ,
    
    
 
