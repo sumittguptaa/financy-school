@@ -11,7 +11,8 @@ exports.createStudent = catchAsyncErrors(async (req,res,next)=>{
     res.status(201).json(
         {
             success:true,
-            student
+            student,
+           message: "Student data inserted successfully"
         }
     )
 });
@@ -26,8 +27,9 @@ exports.getAllStudentsAssociatewithSchoolId = catchAsyncErrors(async (req,res)=>
    
 
     res.status(200).json({
-        message:true,
-        students
+        success:true,
+        students,
+        message:"Records fetched successfully"
     });
 })
 
@@ -35,8 +37,9 @@ exports.getAllStudents = catchAsyncErrors(async (req,res)=>{
     const students = await Student.find();
 
     res.status(200).json({
-        message:true,
-        students
+        success:true,
+        students,
+        message: "All records fetched successfully"
     });
 })
 
@@ -53,7 +56,8 @@ exports.getStudentDetails = catchAsyncErrors(async (req,res,next)=>{
 
     res.status(200).json({
         success:true,
-        student
+        student,
+        message: "Student fetched successfully"
     })
 
 })
@@ -76,7 +80,8 @@ exports.updateStudent = catchAsyncErrors(async (req,res,next)=>{
 
     res.status(200).json({
         success:true,
-        student
+        student,
+        message: "Updated successfully"
     })
 })
 
@@ -91,7 +96,7 @@ exports.deleteStudent = catchAsyncErrors(async(req,res,next)=>{
     const student =await Student.findByIdAndDelete(req.params.id);
        
      if(!student){
-        return next(new ErrorHandler("Product not found",404))
+        return next(new ErrorHandler("Student not found",404))
      }
 
      
