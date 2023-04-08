@@ -6,6 +6,11 @@ const studentSchema = mongoose.Schema({
         required:[true,"Please Enter School Id"],
         trim:true
     },
+    class_of_student:{
+        type:String,
+        required:[true,"Please Enter School Id"],
+        trim:true
+    },
     gi_student:
         {
             studentname_as_per_school_record:{
@@ -86,6 +91,16 @@ const studentSchema = mongoose.Schema({
                 required:[true,"Please Enter  class/grade in previous year? "],
                 trim:true
             },
+            last_school_marks:{
+                type:String,
+                required:[true,"Please Enter  last school marks? "],
+                trim:true
+            },
+            attendance_percent_lastyear:{
+                type:String,
+                required:[true,"Please Enter  last year attendance? "],
+                trim:true
+            }
 
         }
     ,
