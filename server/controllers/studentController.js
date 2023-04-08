@@ -62,6 +62,21 @@ exports.getStudentDetails = catchAsyncErrors(async (req,res,next)=>{
 
 })
 
+// get student details class wise
+
+exports.getAllStudentsClassWise = catchAsyncErrors(async (req,res)=>{
+    
+    const schoolId = req.params.schoolId;
+    const studentClass = req.params.studentClass;
+
+    const students = await Student.find({school_id:schoolId,class_of_student:studentClass});
+   
+    res.status(200).json({
+        success:true,
+        students,
+        message: "Student fetched successfully"
+    });
+})
 
 // update Product --Admin
 
