@@ -91,12 +91,12 @@ const studentSchema = mongoose.Schema({
                 required:[true,"Please Enter  class/grade in previous year? "],
                 trim:true
             },
-            last_school_marks:{
+            percentage_marks_of_student_in_previous_academic_schooling:{
                 type:String,
                 required:[true,"Please Enter  last school marks? "],
                 trim:true
             },
-            attendance_percent_lastyear:{
+            percentage_attendance_of_student_in_previous_academic_schooling:{
                 type:String,
                 required:[true,"Please Enter  last year attendance? "],
                 trim:true
