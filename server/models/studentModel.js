@@ -11,6 +11,15 @@ const studentSchema = mongoose.Schema({
         required:[true,"Please Enter School Id"],
         trim:true
     },
+    student_image:{
+
+        type:String,
+
+        required:[true,"Please Enter School Id"],
+
+        trim:true
+
+    },
     gi_student:
         {
             studentname_as_per_school_record:{
