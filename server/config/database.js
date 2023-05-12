@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-
+require("dotenv").config();
 const connectDatabase =()=>{
 
 MONGODB_DATABASE = 'schoolmanagement'

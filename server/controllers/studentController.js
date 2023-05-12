@@ -1,8 +1,9 @@
 const AWS = require("aws-sdk");
+require("dotenv").config();
 AWS.config.update({
-  region: "ap-south-1",
-  accessKeyId: "AKIAZAYC62OFKDSTU77V",
-  secretAccessKey: "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",
+  region: process.env.REGION,
+  accessKeyId: process.env.ACCESS_KEY_ID,
+  secretAccessKey: process.env.SECRET_ACCESS_KEY ,
 });
 
 const dynamoDB = new AWS.DynamoDB.DocumentClient();
@@ -10,7 +11,7 @@ const Student = require("../models/studentModel");
 const ErrorHandler = require("../utils/errorhandle");
 const catchAsyncErrors = require("../middleware/catchAsyncError");
 
-// create Product --Admin
+
 
 exports.createStudent = catchAsyncErrors(async (req, res, next) => {
   const params = {
